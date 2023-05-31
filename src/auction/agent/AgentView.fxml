@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="763.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="auction.agent.AgentController">
+   <children>
+   
+       <VBox spacing="10">
+           <padding>
+               <Insets bottom="20" left="20" right="20" top="20" />
+           </padding>
+      <children>
+              <HBox spacing="10">
+                 <children>
+                     <Label text="Bank Server Location:" />
+                     <TextField fx:id="bankHost" text="localhost" />
+                 </children>
+              </HBox>
+              <HBox spacing="10">
+                 <children>
+                     <Button onAction="#handleBankConnect" text="Connect Bank" />
+                     <Label fx:id="bankConnectStatus" />
+                 </children>
+              </HBox>
+      
+              <Separator />
+            <HBox prefHeight="9.0" prefWidth="561.0">
+               <children>
+                  <Button fx:id="who" mnemonicParsing="false" onAction="#populateInitial" text="whoami" />
+                  <Button mnemonicParsing="false" onAction="#disconnectAgent" text="Disconnect Agent">
+                     <HBox.margin>
+                        <Insets left="315.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+              <HBox spacing="10">
+                 <children>
+                     <Label text="Agent Id:">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+                     <TextField fx:id="agentId" editable="false" prefHeight="31.0" prefWidth="51.0" />
+                  <Label text="Agent Name:">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="15.0" right="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="agentName" editable="false" />
+                 </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+              </HBox>
+            <HBox prefHeight="0.0" prefWidth="436.0">
+               <children>
+                  <Label prefHeight="31.0" prefWidth="118.0" text="Account Balance:" />
+                  <TextField fx:id="agentAccountBal" editable="false" prefHeight="31.0" prefWidth="96.0" />
+                  <Label prefHeight="33.0" prefWidth="145.0" text="Available Balance:">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="agentAvailFunds" alignment="CENTER_RIGHT" editable="false" prefHeight="31.0" prefWidth="73.0" />
+               </children>
+            </HBox>
+      
+              <Separator />
+      
+              <HBox spacing="10">
+         <children>
+                     <Button onAction="#queryHousesList" text="Get Houses List" />
+                     <TextField fx:id="housesList" prefWidth="200.0" text="..." />
+         </children>
+              </HBox>
+              <HBox spacing="10">
+                 <children>
+                     <Label text="House Id:" />
+                     <TextField fx:id="houseId" text="h01" />
+                 </children>
+              </HBox>
+              <HBox spacing="10">
+                 <children>
+                     <Button onAction="#queryHouseHost" text="Get House Server Location" />
+                     <TextField fx:id="houseHost" editable="false" text="..." />
+                 </children>
+              </HBox>
+              <HBox spacing="10">
+                 <children>
+                     <Button onAction="#handleHouseConnect" text="Connect House" />
+                     <Label fx:id="houseConnectStatus" />
+                 </children>
+              </HBox>
+      
+              <HBox spacing="10">
+         <children>
+                     <Button onAction="#queryHouseAccountBalance" text="Get House AccountBalance" />
+                     <TextField fx:id="houseFunds" editable="false" prefWidth="200.0" text="..." />
+         </children>
+              </HBox>
+            <HBox prefHeight="0.0" prefWidth="561.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#disconnectHouse" text="Disconnect House" />
+               </children>
+            </HBox>
+      
+              <Separator />
+      
+              <HBox spacing="10">
+         <children>
+                     <Button onAction="#queryHouseItemsList" text="Get Items List" />
+                     <TextField fx:id="itemsList" editable="false" prefHeight="31.0" prefWidth="429.0" text="..." />
+         </children>
+              </HBox>
+              <HBox spacing="10">
+                 <children>
+                     <Label text="Item Id:" />
+                     <TextField fx:id="itemId" text="i01" />
+                 </children>
+              </HBox>
+              <HBox spacing="10">
+                 <children>
+                     <Button onAction="#queryItemInfo" text="Get Item Info" />
+                     <TextField fx:id="itemName" editable="false" prefHeight="31.0" prefWidth="295.0" text="..." />
+                     <Label text="High Bid:" />
+                     <TextField fx:id="itemPrice" editable="false" prefWidth="50.0" text="..." />
+                 </children>
+              </HBox>
+            <HBox prefHeight="3.0" prefWidth="561.0">
+               <children>
+                  <Label prefHeight="31.0" prefWidth="98.0" text="Minimum Bid:">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="minBid" editable="false" prefHeight="31.0" prefWidth="76.0" />
+                  <Label prefHeight="31.0" prefWidth="111.0" text="High Bid Agent:">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="highBidAgent" editable="false" />
+               </children>
+            </HBox>
+      
+              <Separator />
+      
+              <HBox spacing="10">
+         <children>
+                     <Button onAction="#makeBid" text="Make Bid" />
+                     <TextField fx:id="bidAmount" prefHeight="31.0" prefWidth="101.0" text="..." />
+                     <Label prefHeight="30.0" prefWidth="65.0" text="Bid Reply:" />
+                     <TextField fx:id="bidReply" editable="false" prefHeight="31.0" prefWidth="283.0" text="..." />
+         </children>
+              </HBox>
+            <HBox prefHeight="0.0" prefWidth="561.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="91.0" text="Won Item Id:">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="wonItemId" editable="false" prefHeight="31.0" prefWidth="74.0" />
+                  <Label prefHeight="33.0" prefWidth="44.0" text="for $">
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="wonItemAmount" editable="false" />
+               </children>
+            </HBox>
+      </children>
+   
+   
+       </VBox>
+   </children>
+</Pane>

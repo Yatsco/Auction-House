@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="auction.house.HouseController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox spacing="10">
+        <HBox spacing="10">
+            <Label text="Bank Server Location:"/>
+            <TextField fx:id="host" text="localhost"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Bank Port:"/>
+            <TextField fx:id="port" text="8000"/>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Connect Bank" onAction="#handleConnect"/>
+            <Label fx:id="connectStatus"/>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Send Bank Message" onAction="#sendMessageToBank"/>
+            <TextField fx:id="message" text="Bank message"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Bank Response:"/>
+            <Label fx:id="serverResponse"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

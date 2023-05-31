@@ -1,0 +1,7 @@
+out
+.idea
+*.iml
+src/agentmain
+src/agentserver
+src/bankserverman
+src/houseserverman
